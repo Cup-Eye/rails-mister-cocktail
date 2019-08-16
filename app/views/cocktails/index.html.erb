@@ -3,6 +3,7 @@
 <ul>
 <% @cocktails.each do |c| %>
   <li> <%= link_to c.name, cocktail_path(c) %></li>
+  <%= cl_image_tag c.photo, width: 150, height: 150, crop: :thumb %>
 <% end %>
 </ul>
 

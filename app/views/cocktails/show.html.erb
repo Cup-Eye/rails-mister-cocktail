@@ -2,6 +2,8 @@
 
 <p><%= @cocktail.name %></p>
 
+<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+
 <h2>ingredients</h2>
 <ul>
   <% @cocktail.doses.each do |dose| %>
@@ -22,6 +24,10 @@
 <% end %>
 
 
+
+<%= link_to "Delete cocktail", cocktail_path,
+    method: :delete,
+    data: { confirm: 'Are you sure?'} %>
 
 <%= link_to "Back to Index", cocktails_path %>
 
